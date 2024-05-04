@@ -1,13 +1,262 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Import your chosen color palette (replace with your actual class name) */
+.vibrant-palette {
+    /* Customize your vibrant color scheme here (e.g., sunset or ocean) */
+    background: linear-gradient(to right, #f7cac9 0%, #ffa68a 50%, #fe7e68 100%);
+    color: #fff; /* Adjust text color for contrast */
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* Apply your chosen color palette class here */
+    background-color: inherit;
+  }
+  
+  .navbar h1 {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    font-weight: bold;
+    color: #f05e8d;
+  }
+  
+  .navbar .links {
+    display: flex;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .navbar .links a {
+    color: inherit; /* Inherit color from the color palette */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    position: relative; /* Enable positioning for the underline */
+  }
+  .navbar .links :hover{
+    color: #f05e8d;
+  }
+  .navbar .links a:after {
+    content: ""; /* Add an empty pseudo-element for the underline */
+    position: absolute;
+    width: 0; /* Initially, the underline has no width */
+    height: 2px; /* Set the height of the underline */
+    background-color: #ccc; /* Vibrant grey color */
+    bottom: 0; /* Position the underline at the bottom of the link */
+    left: 0; /* Start the underline at the left edge */
+    transition: width 0.3s ease-in-out; /* Smooth animation for width */
+  }
+  
+  .navbar .links a:hover:after {
+    width: 100%; /* Expand the underline to full width on hover */
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+ 
+/* Home Component */
+
+.home {
+    padding: 2rem; /* Adjust padding as needed */
+    background-color: #f5f5f5; /* Light background color */
+    display: flex; 
+    flex-direction: column;/* Use flexbox for centering */
+    align-items: center;
+    min-height: 100vh; /* Set minimum height for full viewport height centering */
+  }
+  
+  .home h1 {
+    font-size: 2rem; /* Adjust font size as needed */
+    margin: 0 0 1rem 0; /* Add some bottom margin */
+    color: #f05e8d; /* Unique pink color */
+    font-family: "Playfair Display", serif; /* Playfair Display for heading */
+  }
+  
+  .home h1 span { /* Optional: Add a contrasting color for a part of the heading */
+    color: #333;
+  }
+  
+  .home p, .home div { /* Style other text elements in the home content */
+    font-size: 1rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for better readability */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", Helvetica Neue, sans-serif; /* Font family matching other parts of the UI */
+  }
+/* Blog List */
+.blog-list {
+    background-color: #e0d6f7; /* Unique purple color */
+    padding: 2rem; /* Adjust padding as needed */
+  }
+  
+  .blog-list ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Increased card width and modern styles for `.blog-preview` */
+  .blog_prev {
+    margin-bottom: 1rem; /* Add space between blog previews */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+    transition: box-shadow 0.2s ease-in-out; /* Smooth transition for hover effect */
+    width: 300px; /* Increase card width (adjust as needed) */
+    display: flex; /* Use flexbox for potential layout adjustments */
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1rem; /* Add some padding inside the card */
+    background-color: #fff; /* Light background color for the card content */
+    box-sizing: border-box; /* Include padding in overall width calculation */
+  }
+  
+  .blog_prev:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  }
+  
+  /* Modern CSS for link elements within `.blog-preview` */
+  .blog_prev a {
+    color: #9b59b6; /* Unique lighter purple */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+  }
+  
+  .blog_prev a:hover {
+    color: #7e57c2; /* Darker purple on hover */
+  }
+  
+  .blog_prev h2 {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    margin-bottom: 0.5rem; /* Add some margin below the heading */
+    color: #9b59b6; /* Unique lighter purple */
+  }
+  
+  .blog_prev p {
+    font-size: 0.9rem; /* Adjust font size as needed */
+    margin-top: 0; /* Remove default margin top */
+    color: #7e57c2; /* Unique darker purple */
+  }
+  
+  /* Blog Details */
+.blog_details {
+    background-color: #fff; /* Light background color */
+    padding: 2rem; /* Adjust padding as needed */
+  }
+  
+  .blog_details h1 {
+    font-size: 2rem; /* Adjust font size as needed */
+    margin-bottom: 1rem; /* Add some margin below the heading */
+    color: #9b59b6; /* Unique lighter purple */
+    display: flex;
+    justify-content: center;
+  }
+  .blog_details h2{
+    margin-bottom: 1rem; /* Add some margin below the heading */
+    color: #f05e8d; 
+    display: flex;
+    justify-content:center;
+  }
+  .blog_details p {
+    font-size: 1rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for better readability */
+    font-family: serif; /* Beautiful serif font */
+    color: #7e57c2; /* Unique darker purple */
+    display: flex;
+    justify-content:center;
+  }
+  
+  /* Modern Delete Button Styles */
+  .blog_details button {
+    background-color: #f05e8d; /* Unique pink shade */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Indicate clickable button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: box-shadow 0.2s ease-in-out; /* Smooth transition on hover */
+    margin-left: 47%;
+  }
+  
+  .blog_details button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+    display: flex;
+    justify-content:center;
+  }
+/* Blog Form Styles */
+.blog-form-container {
+    display: flex; /* Center the form horizontally (adjust as needed) */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Set minimum height for full viewport */
+    background-color: #f5f5f5; /* Light background color */
+  }
+  .blog-form-container h1{
+    color: #f05e8d;
+  }
+  .form-group {
+    margin-bottom: 1rem; /* Add space between form groups */
+  }
+  
+  .form-label {
+    font-weight: bold; /* Bold labels for better readability */
+  }
+  
+  .form-control {
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Light border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Adjust font size as needed */
+    background-color: #fff; /* White background color for input fields */
+    color: #333; /* Dark text color */
+    font-family: inherit; /* Inherit font from parent element */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition on focus */
+    width: 100%; /* Make input fields full width */
+  }
+  
+  .form-control:focus {
+    border-color: #f05e8d; /* Pink border on focus */
+    box-shadow: 0 0 3px rgba(240, 94, 141, 0.2); /* Subtle pink shadow on focus */
+  }
+  
+  .form-btn {
+    background-color: #7e57c2; /* Dark purple background for button */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Indicate clickable button */
+    font-weight: bold; /* Bold text for emphasis */
+    font-family: inherit; /* Inherit font from parent element */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+  
+  .form-btn:hover {
+    background-color: #673ab7; /* Darken purple on hover */
+  }
+  .form-control {
+    /* Existing styles... */
+    outline: none; /* Remove default outline */
+  }
+  /* Contact Page Styles */
+.contact-container {
+    display: flex; /* Allow centering elements vertically */
+    flex-direction: column;
+    align-items: center; /* Center elements vertically within container */
+    min-height: 100vh; /* Set minimum height for full viewport */
+    background-color: #f5f5f5; /* Light background color */
+  }
+  
+  .contact-container h1 {
+    font-size: 2rem; /* Adjust font size as needed */
+    margin-bottom: 1rem; /* Add some margin below the heading */
+    color: #f05e8d; /* Unique lighter purple */
+  }
+  
+  .contact-container p {
+    font-size: 1rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for better readability */
+    font-family: serif; /* Beautiful serif font */
+    color: #7e57c2; /* Unique darker purple */
+  }
+  
